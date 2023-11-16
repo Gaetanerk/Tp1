@@ -1,8 +1,8 @@
 ## 10 Listez pour chaque ticket la quantité totale d’articles vendus. (Classer par quantité décroissante)
-
 ```mysql
-
+SELECT NUMERO_TICKET, SUM(QUANTITE) FROM ventes GROUP BY NUMERO_TICKET ORDER BY SUM(QUANTITE) DESC
 ```
+
 
 ## 11 Listez chaque ticket pour lequel la quantité totale d’articles vendus est supérieure à 500. (Classer par quantité décroissante)
 

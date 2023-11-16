@@ -25,45 +25,54 @@ formateur de vous aider ou de vous donner le docker-compose.
 Réalisez les requêtes suivantes :
 
 ### Quels sont les tickets qui comportent l’article d’ID 500, afficher le numéro de ticket uniquement ?
+```mysql
 SELECT NUMERO_TICKET FROM ventes WHERE ID_ARTICLE = 500
-
+```
 
 
 ### Afficher les tickets du 15/01/2014.
+```mysql
 SELECT NUMERO_TICKET FROM ticket WHERE DATE_VENTE = '2014-01-15'
-
+```
 
 
 ### Afficher les tickets émis du 15/01/2014 et le 17/01/2014.
+```mysql
 SELECT NUMERO_TICKET FROM ticket WHERE DATE_VENTE BETWEEN '2014-01-15' AND '2014-01-17'
-
+```
 
 
 ### Editer la liste des articles apparaissant à 50 et plus exemplaires sur un ticket.
+```mysql
 SELECT ID_ARTICLE FROM ventes WHERE QUANTITE >= 50
-
+```
 
 
 ### Quelles sont les tickets émis au mois de mars 2014.
+```mysql
 SELECT NUMERO_TICKET FROM ticket WHERE DATE_VENTE BETWEEN '2014-03-01' AND '2014-03-31'
-
+```
 
 
 ### Quelles sont les tickets émis entre les mois de mars et avril 2014 ?
+```mysql
 SELECT NUMERO_TICKET FROM ticket WHERE YEAR(DATE_VENTE) = 2014 AND MONTH(DATE_VENTE) BETWEEN 3 AND 4
-
+```
 
 
 ### Quelles sont les tickets émis au mois de mars et juin 2014 ?
+```mysql
 SELECT NUMERO_TICKET, MONTH(DATE_VENTE) FROM ticket WHERE YEAR(DATE_VENTE) = 2014 AND MONTH(DATE_VENTE) IN (3, 6)
-
+```
 
 
 ### Afficher la liste des bières classée par couleur. (Afficher l’id et le nom)
+```mysql
 SELECT NOM_ARTICLE, ID_Couleur FROM article ORDER BY ID_Couleur
-
+```
 
 
 ### Afficher la liste des bières n’ayant pas de couleur. (Afficher l’id et le nom)
+```mysql
 SELECT NOM_ARTICLE, ID_Couleur FROM article WHERE ID_Couleur IS NULL
-
+```
