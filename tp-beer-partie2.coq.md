@@ -70,7 +70,11 @@ WHERE pays.ID_CONTINENT = (
 ## 16. Lister les tickets (année, numéro de ticket, montant total payé). En sachant que le prix de vente est égal au prix d’achat augmenté de 15%.
 
 ```mysql
-
+SELECT ANNEE, NUMERO_TICKET, ROUND(SUM((QUANTITE * article.PRIX_ACHAT) * 1.15), 2)
+FROM ventes
+JOIN article
+ON ventes.ID_ARTICLE = article.ID_ARTICLE
+GROUP BY ANNEE, NUMERO_TICKET
 ```
 
 ## 17  Donner le C.A. par année.
